@@ -1,27 +1,27 @@
 $(document).ready(function () {
-	 $('#htmlTextArea').text(null);
-	 $('#cssTextArea').text(null);
-	 $('#jsTextArea').text(null);
+	 $('#htmlTextArea').val("");
+	 $('#cssTextArea').val("");
+	 $('#jsTextArea').val("");
 
 
 	$('#cssTextArea').bind('input propertychange', function() {
-        var x = $('#cssTextArea').text();
+        var x = $('#cssTextArea').val();
 		$('#myStyle').html(x);
 
      });
 
 	$('#jsTextArea').bind('input propertychange', function() {
-        var z =$('#jsTextArea').text();
-		$('#myJs').html(z);
+        var z = $('#jsTextArea').val();
+        z = '<script>'+z+'</script>';
+        var y = $('#htmlTextArea').val();
+		$('#output').html(y+z);
 		
 
      });
 
 	$('#htmlTextArea').bind('input propertychange', function() {
-		
-        var y = $('#htmlTextArea').text();
+        var y = $('#htmlTextArea').val();
 		$('#output').html(y);
-
      });
 
 
